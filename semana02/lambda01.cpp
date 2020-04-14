@@ -19,7 +19,7 @@ public: string nombre;
 };
 
 template <typename T, typename R=T>
-void sort(vector<T>& a, function<R(T)> key) {
+void sort(vector<T>& a, function<R(T)> key=[](T a){return a;}) {
     for (int i = 0; i < a.size() - 1; ++i) {
         for (int j = 0; j < a.size() - 1 - i; ++j) {
             if (key(a[j]) > key(a[j + 1])) {
