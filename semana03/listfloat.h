@@ -22,6 +22,32 @@ public:
         }
     }
 
+    class iterator {
+        Node* aux;
+        int pos;
+    public:
+        iterator(Node* aux, int pos)
+            : aux(aux), pos(pos) {}
+        bool operator!=(iterator other) {
+            return pos != other.pos;
+        }
+        int operator++() {
+            aux = aux->next;
+            ++pos;
+            return 0;
+        }
+        float operator*() {
+            return aux->elem;
+        }
+    };
+    iterator begin() {
+        return iterator(head, 0);
+    }
+    iterator end() {
+        return iterator(nullptr, len);
+    }
+
+
     int size() {
         return len;
     }
