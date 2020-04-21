@@ -6,12 +6,12 @@ class StackList {
         float elem;
         Node* next;
 
-        Node(float elem, Node* next = nullptr)
-            : elem(elem), next(next) {}
+        Node(float elem, Node* next=nullptr) : elem(elem), next(next) {}
     };
 
     Node* ptrTop;
     int length;
+
 public:
     StackList() : ptrTop(nullptr), length(0) {}
     ~StackList() {
@@ -22,10 +22,15 @@ public:
         }
     }
 
-    bool push(float elem) {
+    int size() {
+        return length;
+    }
+    bool is_empty() {
+        return length == 0;
+    }
+    void push(float elem) {
         ptrTop = new Node(elem, ptrTop);
         ++length;
-        return true;
     }
     bool pop() {
         if (length > 0) {
@@ -41,13 +46,7 @@ public:
         if (length > 0) {
             return ptrTop->elem;
         }
-        return -0.0001;
-    }
-    int size() {
-        return length;
-    }
-    bool is_empty() {
-        return length == 0;
+        return 0.00001; // No se enecontro nada para retornar :)
     }
 };
 

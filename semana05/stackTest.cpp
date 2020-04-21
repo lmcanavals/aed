@@ -8,7 +8,7 @@ int main() {
     StackArray* sa = new StackArray(20);
     StackList* sl = new StackList();
 
-    for (int i = 0; i < 25; ++i) {
+    for (int i = 0; i < 25; i++) {
         sa->push(i * 10);
         sl->push(i * 11);
     }
@@ -25,7 +25,5 @@ int main() {
     }
     cout << endl;
 
-    delete sa;
-    delete sl;
     return 0;
 }
