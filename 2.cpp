@@ -1,3 +1,4 @@
+%%writefile 2.cpp
 #include <iostream>
 #include <vector>
 #include <math.h>
@@ -42,7 +43,7 @@ private:
 };
 
 int main() {vector<int> keys = { 208, 408, 624, 816, 1040, 1248, 1428, 1664, 1836, 2080, 2244, 2496, 2652, 2912, 3060, 3328, 3468, 3744 };
-    pht* ht = new pht(31, 6, 12, 109, 113);
+    pht* ht = new pht(1000, 6, 12, 109, 113);
 
     for (auto k : keys) {
         printf("%d\n", ht->add(k));
