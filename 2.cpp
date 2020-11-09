@@ -33,7 +33,7 @@ private:
         for (int j = 0; j <= k; ++j) {
             sum += (c1/c2)*j;
         }
-        return floor(sum) % n;
+        return int(floor(sum)) % n;
     }
 
     int h(int k, int i) {
